@@ -15,7 +15,7 @@ import "./src/components/screens/localization/i18n";
 
 LogBox.ignoreAllLogs();
 
-export default function App() {
+const AppContent = () => {
   const theme = useSelector((state: any) => state.theme.theme);
   const appTheme = theme === "light" ? lightTheme : darkTheme;
   const dispatch = useDispatch<AppDispatch>();
@@ -23,18 +23,25 @@ export default function App() {
   useEffect(() => {
     dispatch(loadLanguage());
   }, []);
+
+  return (
+    <SafeAreaView
+      style={[
+        styles.container,
+        { backgroundColor: appTheme.colors.background },
+      ]}
+    >
+      <ThemeProvider value={appTheme}>
+        <AppNavigator />
+      </ThemeProvider>
+    </SafeAreaView>
+  );
+};
+
+export default function App() {
   return (
     <Provider store={store}>
-      <SafeAreaView
-        style={[
-          styles.container,
-          { backgroundColor: appTheme.colors.background },
-        ]}
-      >
-        <ThemeProvider value={appTheme}>
-          <AppNavigator />
-        </ThemeProvider>
-      </SafeAreaView>
+      <AppContent />
     </Provider>
   );
 }
