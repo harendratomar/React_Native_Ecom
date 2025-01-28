@@ -1,3 +1,4 @@
+
 package com.myecom
 
 import com.facebook.react.ReactActivity
@@ -20,3 +21,5 @@ class MainActivity : ReactActivity() {
   override fun createReactActivityDelegate(): ReactActivityDelegate =
       DefaultReactActivityDelegate(this, mainComponentName, fabricEnabled)
 }
+
+
