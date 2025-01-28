@@ -57,6 +57,11 @@ npm run ios
 # OR using Yarn
 yarn ios
 ```
-## Step 2: Login Crudential 
-Username:emilys
-Password:emilyspass
+## Step 3: Login Crudential 
+To access the app, use the following credentials:
+
+Username: emilys Password: emilyspass
+
+#Install dependencies using one of the following commands:
+
+npm i or npm i --legacy-peer-deps
